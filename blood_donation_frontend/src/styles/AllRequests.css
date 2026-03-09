@@ -1,0 +1,497 @@
+/* AllRequests.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.all-requests-container {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #ffeee6 0%, #ffe0d6 50%, #ffd4c4 100%);
+  padding: 2rem 0;
+  margin: 0;
+}
+
+/* Header */
+.page-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.header-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title-icon {
+  font-size: 2.5rem;
+  animation: urgentPulse 2s infinite;
+}
+
+@keyframes urgentPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+
+/* Results Info */
+.results-info {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1rem;
+}
+
+.results-count {
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Requests Feed */
+.requests-feed {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.requests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Request Cards */
+.request-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInUp 0.6s ease-out both;
+  position: relative;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.request-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Urgency Banner */
+.urgency-banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 12px;
+  z-index: 10;
+}
+
+.urgency-text {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Card Header */
+.card-header {
+  padding: 16px 20px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-section {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.avatar-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #dc2626;
+}
+
+.urgent-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  background: #dc2626;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: urgentBlink 1.5s infinite;
+}
+
+@keyframes urgentBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.requester-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #181818;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.request-meta {
+  margin-bottom: 4px;
+}
+
+.blood-group-badge {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #666;
+  font-size: 14px;
+}
+
+.post-time {
+  color: #666;
+  font-size: 12px;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+/* Card Content */
+.card-content {
+  padding: 16px 20px;
+}
+
+.request-details {
+  margin-bottom: 16px;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #dc2626;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #181818;
+  font-size: 13px;
+  font-weight: 600;
+  max-width: 60%;
+  text-align: right;
+}
+
+.urgent-date {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.request-message {
+  color: #181818;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.request-message p {
+  margin: 0;
+  font-style: italic;
+  background: rgba(220, 38, 38, 0.05);
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #dc2626;
+}
+
+/* Card Actions */
+.card-actions {
+  padding: 8px 20px 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.action-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.stat-item:hover {
+  background-color: #f3f3f3;
+}
+
+.stat-count {
+  font-weight: 500;
+  color: #666;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border: 1px solid #dc2626;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.email-btn {
+  background: white;
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.email-btn:hover {
+  background: #fef2f2;
+}
+
+.call-btn {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}
+
+.call-btn:hover {
+  background: #b91c1c;
+}
+
+.donate-btn {
+  background: #16a34a;
+  color: white;
+  border-color: #16a34a;
+}
+
+.donate-btn:hover {
+  background: #15803d;
+}
+
+/* Loading State */
+.loading-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.request-card.loading {
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.avatar-skeleton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.name-skeleton {
+  width: 120px;
+  height: 20px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.meta-skeleton {
+  width: 80px;
+  height: 16px;
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
+.content-skeleton {
+  height: 16px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.content-skeleton.short {
+  width: 70%;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .all-requests-container {
+    padding: 1rem 0;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .requests-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    flex: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-header {
+    padding: 1rem;
+  }
+
+  .card-content {
+    padding: 0 1rem 1rem;
+  }
+
+  .card-actions {
+    padding: 1rem;
+  }
+
+  .profile-section {
+    gap: 0.75rem;
+  }
+
+  .profile-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .requester-name {
+    font-size: 15px;
+  }
+
+  .action-stats {
+    gap: 1rem;
+  }
+
+  .urgency-banner {
+    padding: 0.25rem 0.75rem;
+  }
+
+  .urgency-text {
+    font-size: 0.7rem;
+  }
+}
