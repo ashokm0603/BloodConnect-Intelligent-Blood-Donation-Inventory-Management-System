@@ -27,8 +27,54 @@ BloodConnect is a full-stack, comprehensive web application designed to bridge t
 
 The repository is structured into two main directories:
 
-- `/blood_donation-backend`: Contains the complete Spring Boot REST API code.
-- `/blood_donation_frontend`: Contains the Vite-based React frontend code.
+## 📁 Project Structure
+
+The repository is structured into two main directories:
+
+### Backend Structure (`/blood_donation-backend`)
+```text
+src/main/java/com/nec/
+├── config/               # Security and application configurations
+├── controller/           # REST API Endpoints
+│   ├── AuthController.java
+│   ├── DonationController.java
+│   ├── DonorController.java
+│   └── RequestController.java
+├── entity/               # JPA Entities (Database Models)
+│   ├── Donation.java
+│   ├── Donor.java
+│   ├── Request.java
+│   └── User.java
+├── repository/           # Data Access Layer (Spring Data JPA)
+│   ├── DonationRepository.java
+│   ├── DonorRepository.java
+│   ├── RequestRepository.java
+│   └── UserRepository.java
+├── service/              # Business Logic Layer
+│   └── UserService.java
+└── BloodDonationBackendApplication.java # Main Application Entry
+```
+
+### Frontend Structure (`/blood_donation_frontend`)
+```text
+src/
+├── apis/                 # API communication logic (Axios)
+│   └── apis.jsx
+├── pages/                # Application Pages/Screens
+│   ├── AllDonations.jsx
+│   ├── AllRequests.jsx
+│   ├── BloodCompatibility.jsx
+│   ├── Dashboard.jsx
+│   ├── Donate.jsx
+│   ├── Login.jsx
+│   ├── Request.jsx
+│   └── Signup.jsx
+├── styles/               # CSS and styling files
+├── App.jsx               # Main App component & routing
+├── main.jsx              # Entry point
+├── App.css
+└── index.css
+```
 
 ## 🛠️ Prerequisites
 
